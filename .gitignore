@@ -3,4 +3,5 @@
 /php/php.ini
 /mysql/*
 /app/*
+.DS_Store
 docker-compose.yml
