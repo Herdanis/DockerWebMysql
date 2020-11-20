@@ -13,3 +13,5 @@ RUN Docker-compose
  - /nginx/default.dev.conf => /nginx/default.conf
 5. copy or change php.ini configuration
  - /php/php.dev.ini => /php/php.ini
+6. run docker-compose it will create mysql and app folder
+7. copy and paste or clone project from github
