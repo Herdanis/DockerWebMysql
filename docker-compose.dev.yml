@@ -19,7 +19,7 @@ services:
             - php
             - mysql
     php:
-        image: herdanis/php7.3-composer-laravel
+        image: herdanis/php7.4fpm-composer-laravel:1.0
         container_name: php
         volumes:
             - ./app:/var/www/html
@@ -37,10 +37,10 @@ services:
             - ./mysql:/var/lib/mysql
         command: --max_allowed_packet=32505856
         environment:
-            MYSQL_DATABASE: baseData
-            MYSQL_USER: homestead
-            MYSQL_PASSWORD: secret
-            MYSQL_ROOT_PASSWORD: secret
+            MYSQL_DATABASE: data
+            MYSQL_USER: docker
+            MYSQL_PASSWORD: 123
+            MYSQL_ROOT_PASSWORD: 123
             SERVICE_TAGS: dev
             SERVICE_NAME: mysql
         networks:
@@ -52,7 +52,7 @@ services:
             - 82:80
         networks:
             - local
-        restart: always
+        restart: unless-stopped
         environment:
             PMA_HOST: mysql
         depends_on:
